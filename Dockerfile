@@ -6,7 +6,7 @@ RUN go get -d -v \
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
 
 From scratch
-COPY --from=builer app .
+COPY --from=builder /go/app .
 EXPOSE 8000
 ENV IP=0.0.0.0
 ENV PORT=8000
