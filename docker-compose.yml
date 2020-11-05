@@ -1,14 +1,20 @@
 version: '3.6'
 
+networks :
+   drianet:
+
 services:
  go:
    image: "go:latest"
+   build: .
    ports: 
      - '8000:8000'
+   networks: 
+     - 'drianet'
 
  postgres:
    image: "postgres:latest"
-   ports: 
-     - "0000:0000"
    environment:
      - POSTGRES_PASSWORD=123456789
+   networks: 
+     - 'drianet'
