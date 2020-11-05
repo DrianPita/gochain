@@ -15,6 +15,6 @@ services:
  postgres:
    image: "postgres:latest"
    environment:
-     - POSTGRES_PASSWORD=123456789
+     - 'POSTGRES_PASSWORD=123456789'
    networks: 
      - 'drianet'
