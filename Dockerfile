@@ -6,4 +6,11 @@ RUN go get -d -v \
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o a.out
 EXPOSE 8000
 
-
+From scratch
+COPY app.go .
+EXPOSE 8000
+ENV IP=0.0.0.0
+ENV PORT=8000
+ENV POSTGRES_URL=0.0.0.0
+ENV POSTGRES_PASSWORD=123456789
+ENTRYPOINT ["./app"]
